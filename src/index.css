@@ -1,0 +1,104 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light dark;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  @apply bg-gray-50 text-gray-900 antialiased;
+  font-feature-settings: 'cv11', 'ss01';
+}
+
+.dark body {
+  @apply bg-[#0b0d10] text-gray-100;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-300 dark:bg-gray-700 rounded-full;
+}
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-400 dark:bg-gray-600;
+}
+
+/* Native dropdown option lists render on a white popup in most browsers;
+   force dark text so they're always readable (incl. dark mode). */
+select option,
+select optgroup {
+  color: #111827;
+  background-color: #ffffff;
+}
+
+@layer components {
+  .card {
+    @apply rounded-2xl bg-white dark:bg-[#15181d] border border-gray-100 dark:border-white/5 shadow-card;
+  }
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-lift hover:-translate-y-0.5;
+  }
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl font-semibold transition-all duration-200 disabled:opacity-50 disabled:pointer-events-none;
+  }
+  .btn-primary {
+    @apply btn bg-gray-900 text-white hover:bg-black dark:bg-white dark:text-gray-900 dark:hover:bg-gray-200;
+  }
+  .btn-ghost {
+    @apply btn bg-gray-100 dark:bg-white/5 text-gray-700 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-white/10;
+  }
+  .btn-outline {
+    @apply btn border border-gray-200 dark:border-white/10 text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-white/5;
+  }
+  .input {
+    @apply w-full rounded-xl border border-gray-200 dark:border-white/10 bg-white dark:bg-white/5 px-3.5 py-2.5 text-sm text-gray-900 dark:text-gray-100 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-accent-500/40 focus:border-accent-500 transition;
+  }
+  .chip {
+    @apply inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-xs font-medium;
+  }
+}
+
+/* Print / Save-as-PDF: hide app chrome, force a clean light page. */
+@media print {
+  aside,
+  header,
+  footer,
+  .no-print {
+    display: none !important;
+  }
+  .lg\:pl-64 {
+    padding-left: 0 !important;
+  }
+  html,
+  body {
+    background: #fff !important;
+    color: #111827 !important;
+  }
+  /* force readable dark text on the white print page (even in dark mode) */
+  .dark * {
+    color: #111827 !important;
+  }
+  main {
+    max-width: none !important;
+    padding: 0 !important;
+  }
+  .card {
+    background: #fff !important;
+    box-shadow: none !important;
+    border: 1px solid #e5e7eb !important;
+    break-inside: avoid;
+  }
+}
