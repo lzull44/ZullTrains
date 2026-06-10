@@ -14,6 +14,8 @@ const SERVER_PKG_ID = {
   'pkg-12wk': '12wk',
   'pkg-6mo': '6mo',
   'pkg-trial': 'trial',
+  'pkg-diet': 'diet',
+  'pkg-training': 'training',
 }
 
 const REASSURANCE = [

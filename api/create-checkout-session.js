@@ -10,6 +10,8 @@ const PRICE = {
   '12wk': { id: process.env.STRIPE_PRICE_12WK, mode: 'payment' },
   '6mo': { id: process.env.STRIPE_PRICE_6MO, mode: 'payment' },
   trial: { id: process.env.STRIPE_PRICE_TRIAL, mode: 'payment' },
+  diet: { id: process.env.STRIPE_PRICE_DIET, mode: 'payment' },
+  training: { id: process.env.STRIPE_PRICE_TRAINING, mode: 'payment' },
 }
 
 export default async function handler(req, res) {

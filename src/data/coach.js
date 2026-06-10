@@ -66,4 +66,32 @@ export const PACKAGES = [
       'Easy convert to Monthly after',
     ],
   },
+  {
+    id: 'pkg-diet',
+    name: 'Diet Plan',
+    price: 79.99,
+    cadence: 'one-time',
+    clients: 0,
+    blurb: 'A custom macro split and a personalized meal plan you can actually follow. One-time build, yours to keep.',
+    perks: [
+      'Custom macro targets for your goal',
+      '7-day meal plan tailored to your stats',
+      'Lean protein & food prep guidance',
+      'PDF export ready to print',
+    ],
+  },
+  {
+    id: 'pkg-training',
+    name: 'Training Plan',
+    price: 79.99,
+    cadence: 'one-time',
+    clients: 0,
+    blurb: 'A personalized 4-week training program built around your equipment, experience, and training days.',
+    perks: [
+      'Custom 4-week training block',
+      'Built around your equipment & schedule',
+      'Progression rules baked in',
+      'PDF export ready to print',
+    ],
+  },
 ]
